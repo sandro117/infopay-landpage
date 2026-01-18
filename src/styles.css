@@ -3,8 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+
+  html,
   body {
-    @apply bg-white text-slate-600 font-sans overflow-x-hidden;
+    @apply bg-white text-slate-600 font-sans overflow-x-hidden w-full;
   }
 }
 

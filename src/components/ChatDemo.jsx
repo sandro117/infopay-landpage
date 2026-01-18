@@ -6,10 +6,15 @@ const ChatDemo = () => {
     const [messages, setMessages] = useState([]);
     const [inputValue, setInputValue] = useState("");
     const [isTyping, setIsTyping] = useState(false);
-    const messagesEndRef = useRef(null);
+    const scrollContainerRef = useRef(null);
 
     const scrollToBottom = () => {
-        messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+        if (scrollContainerRef.current) {
+            scrollContainerRef.current.scrollTo({
+                top: scrollContainerRef.current.scrollHeight,
+                behavior: "smooth"
+            });
+        }
     };
 
     useEffect(() => {
@@ -155,7 +160,7 @@ const ChatDemo = () => {
                         ></div>
 
                         {/* Messages Area */}
-                        <div className="flex-1 overflow-y-auto p-4 flex flex-col gap-2 relative z-10">
+                        <div ref={scrollContainerRef} className="flex-1 overflow-y-auto p-4 flex flex-col gap-2 relative z-10">
                             <AnimatePresence>
                                 {messages.map((msg) => (
                                     <motion.div
@@ -193,7 +198,6 @@ const ChatDemo = () => {
                                     </motion.div>
                                 )}
                             </AnimatePresence>
-                            <div ref={messagesEndRef} />
                         </div>
 
                         {/* Quick Replies (Chips) */}
