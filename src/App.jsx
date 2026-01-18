@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Stats from './components/Stats';
@@ -10,6 +10,11 @@ import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 
 function App() {
+  // Fix: Force scroll to top on mount/refresh
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen bg-white bg-dot-pattern flex flex-col font-sans text-slate-900 selection:bg-emerald-100 selection:text-emerald-900 overflow-x-hidden relative">
       {/* Divine Light Effect */}

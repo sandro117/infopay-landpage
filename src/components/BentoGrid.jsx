@@ -16,7 +16,7 @@ const Card = ({ children, className, delay = 0 }) => (
 
 const BentoGrid = () => {
     return (
-        <section className="py-24 px-6 lg:px-20 relative overflow-hidden">
+        <section className="py-24 px-4 lg:px-20 relative overflow-hidden">
             <div className="max-w-7xl mx-auto">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

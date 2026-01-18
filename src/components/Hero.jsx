@@ -67,7 +67,7 @@ const Hero = () => {
                     className="relative"
                 >
                     <div
-                        className="relative w-[280px] xs:w-[320px] h-[580px] xs:h-[650px] bg-slate-900 border-[8px] border-slate-800 rounded-[3rem] shadow-2xl overflow-hidden ring-1 ring-black/5"
+                        className="relative w-[280px] xs:w-[300px] sm:w-[320px] max-w-full h-[580px] xs:h-[600px] sm:h-[650px] bg-slate-900 border-[8px] border-slate-800 rounded-[3rem] shadow-2xl overflow-hidden ring-1 ring-black/5"
                     >
                         {/* Notch */}
                         <div className="absolute top-0 w-1/2 h-7 transform -translate-x-1/2 bg-slate-800 left-1/2 rounded-b-xl z-20" />
